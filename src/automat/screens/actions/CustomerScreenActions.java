@@ -1,4 +1,4 @@
-package automat.screens;
+package automat.screens.actions;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -10,6 +10,6 @@ package automat.screens;
  *
  * @author tttt
  */
-public class BillingScreenActions {
+public class CustomerScreenActions {
     
 }

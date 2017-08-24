@@ -10,7 +10,7 @@ package automat.screens.data;
  *
  * @author tttt
  */
-public class FictionScreenAData extends ScreenData{
+public class FictionScreenAData extends ScreenContents{
 
     protected String field1;
     protected String field2;
@@ -38,6 +38,16 @@ public class FictionScreenAData extends ScreenData{
 
     public void setField3(String field3) {
         this.field3 = field3;
+    }
+
+    @Override
+    protected boolean isDataDeprecated() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    protected void deprecateData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
