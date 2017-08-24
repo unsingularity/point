@@ -9,7 +9,7 @@ package automat.screens;
  *
  * @author tttt
  */
-public class FictionalScreenB extends ScreenHandler {
+public class FictionalScreenB extends ScreenHandler implements IScreen{
 
     private static class InstanceHolder {
         private static final FictionalScreenC SINGLETON = new FictionalScreenC();

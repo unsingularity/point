@@ -9,7 +9,7 @@ package automat.screens;
  *
  * @author tttt
  */
-public class FictionalScreenC extends ScreenHandler {
+public class FictionalScreenC extends ScreenHandler implements IScreen{
 
     private static class InstanceHolder {
 

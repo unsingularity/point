@@ -13,7 +13,7 @@ import java.util.Observable;
  *
  * @author tttt
  */
-public class BillingScreen extends ScreenHandler {
+public class BillingScreen extends ScreenHandler implements IScreen{
 
     private static class InstanceHolder {
         private static final BillingScreen SINGLETON = new BillingScreen();

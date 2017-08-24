@@ -15,8 +15,7 @@ public abstract class ScreenContents {
     
     protected abstract boolean isDataDeprecated();
     
-    protected abstract void deprecateData();
-    
+    protected abstract void deprecateData();   
     
     
 }
