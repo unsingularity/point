@@ -26,8 +26,15 @@ public class BillingScreen extends Screen {
     }
 
     @Override
-    public void update(Observable o, Object arg) {
+    public boolean verifyScreen() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    protected void setStateToDeprecated() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+  
     
 }

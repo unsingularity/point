@@ -10,7 +10,7 @@ package automat.screens.data;
  *
  * @author tttt
  */
-public class FictionScreenAData {
+public class FictionScreenAData extends ScreenData{
 
     protected String field1;
     protected String field2;

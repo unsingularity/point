@@ -14,7 +14,7 @@ import java.util.Observable;
  *
  * @author tttt
  */
-public abstract class Screen implements java.util.Observer{
+public abstract class Screen {
     protected static boolean isActive;
     protected static String locator;
     protected static boolean isPopulated;
@@ -59,12 +59,11 @@ public abstract class Screen implements java.util.Observer{
 
     protected static void setAccessCounter(int aAccessCounter) {
         accessCounter = aAccessCounter;
-    }   
-
-    @Override
-    public void update(Observable o, Object arg) {
-       
     }
+    
+     public abstract boolean verifyScreen();
+     
+    protected abstract void setStateToDeprecated();
    
 
   
