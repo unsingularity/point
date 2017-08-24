@@ -14,11 +14,11 @@ import java.util.Observable;
  *
  * @author tttt
  */
-public abstract class Screen {
+public abstract class ScreenHandler {
     protected static boolean isActive;
     protected static String locator;
     protected static boolean isPopulated;
-    protected ArrayList<Screen> affectedByList;
+    protected ArrayList<ScreenHandler> affectedByList;
     protected Object a;
     private Object b;  
   
@@ -29,7 +29,7 @@ public abstract class Screen {
     }
 
     protected static void setIsPopulated(boolean isPopulated) {
-        Screen.isPopulated = isPopulated;
+        ScreenHandler.isPopulated = isPopulated;
     }
     
     protected abstract void populate();

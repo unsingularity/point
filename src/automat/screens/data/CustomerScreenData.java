@@ -12,32 +12,32 @@ package automat.screens.data;
  */
 public class CustomerScreenData extends ScreenContents{
 
-    protected String field1;
-    protected String field2;
-    protected String field3;
+    protected String addressValue;
+    protected String nameValue;
+    protected String zipCodeValue;    
 
-    public String getField1() {
-        return field1;
+    public String getAddressValue() {
+        return addressValue;
     }
 
-    public void setField1(String field1) {
-        this.field1 = field1;
+    public void setAddressValue(String addressValue) {
+        this.addressValue = addressValue;
     }
 
-    public String getField2() {
-        return field2;
+    public String getNameValue() {
+        return nameValue;
     }
 
-    public void setField2(String field2) {
-        this.field2 = field2;
+    public void setNameValue(String nameValue) {
+        this.nameValue = nameValue;
     }
 
-    public String getField3() {
-        return field3;
+    public String getZipCodeValue() {
+        return zipCodeValue;
     }
 
-    public void setField3(String field3) {
-        this.field3 = field3;
+    public void setZipCodeValue(String zipCodeValue) {
+        this.zipCodeValue = zipCodeValue;
     }
 
     @Override

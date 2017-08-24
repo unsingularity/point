@@ -13,7 +13,7 @@ import java.util.Observable;
  *
  * @author tttt
  */
-public class BillingScreen extends Screen {
+public class BillingScreen extends ScreenHandler {
     
     @Override
     public void populate() {

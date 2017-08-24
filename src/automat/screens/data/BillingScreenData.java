@@ -12,6 +12,34 @@ package automat.screens.data;
  */
 public class BillingScreenData extends ScreenContents{
 
+    protected String totalDueValue;
+    protected String dueDateValue;
+    protected String isPaidValue;    
+
+    public String getTotalDueValue() {
+        return totalDueValue;
+    }
+
+    public void setTotalDueValue(String totalDueValue) {
+        this.totalDueValue = totalDueValue;
+    }
+
+    public String getDueDateValue() {
+        return dueDateValue;
+    }
+
+    public void setDueDateValue(String dueDateValue) {
+        this.dueDateValue = dueDateValue;
+    }
+
+    public String getIsPaidValue() {
+        return isPaidValue;
+    }
+
+    public void setIsPaidValue(String isPaidValue) {
+        this.isPaidValue = isPaidValue;
+    }
+
     @Override
     protected boolean isDataDeprecated() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -21,7 +49,5 @@ public class BillingScreenData extends ScreenContents{
     protected void deprecateData() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
-    
+
 }

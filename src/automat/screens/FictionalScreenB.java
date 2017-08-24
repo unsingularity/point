@@ -10,7 +10,7 @@ package automat.screens;
  *
  * @author tttt
  */
-public class FictionalScreenB extends Screen {
+public class FictionalScreenB extends ScreenHandler {
 
     @Override
     protected void populate() {
