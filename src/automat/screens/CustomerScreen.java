@@ -1,6 +1,5 @@
 package automat.screens;
 
-
 import java.util.Observable;
 
 /*
@@ -8,18 +7,26 @@ import java.util.Observable;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author tttt
  */
-public class CustomerScreen extends ScreenHandler implements IScreen { 
+public class CustomerScreen extends ScreenHandler implements IScreen {
+
+    private static class InstanceHolder {
+
+        private static final CustomerScreen SINGLETON = new CustomerScreen();
+    }
+
+    public static CustomerScreen getInstance() {
+        return InstanceHolder.SINGLETON;
+    }
 
     @Override
     public boolean verifyScreen() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     protected static void setStateToDeprecated() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -43,5 +50,5 @@ public class CustomerScreen extends ScreenHandler implements IScreen {
     public boolean isUpdated() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

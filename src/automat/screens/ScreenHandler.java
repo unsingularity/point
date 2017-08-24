@@ -1,41 +1,37 @@
 package automat.screens;
 
-
 import java.util.ArrayList;
 
-public abstract class ScreenHandler implements IScreen  {
+public abstract class ScreenHandler implements IScreen {
+
     protected boolean isActive;
     protected String locator;
     protected boolean isPopulated;
     protected boolean isUpdated;
-    protected ArrayList<ScreenHandler> affectedByList;
-    protected ScreenHandler instance;
+    protected ArrayList<ScreenHandler> affectedByList;        
     
-    protected ScreenHandler(){
-       
-    } 
+    public abstract void populate();
 
     public boolean isIsUpdated() {
+        
         return isUpdated;
     }
 
     public void setIsUpdated(boolean isUpdated) {
-       // ScreenHandler.isUpdated = isUpdated;
+        // ScreenHandler.isUpdated = isUpdated;
     }
-    
 
-    
-    public abstract void populate();
+   
 
     public boolean isIsPopulated() {
         return isPopulated;
     }
 
     protected void setIsPopulated(boolean isPopulated) {
-      //  ScreenHandler.isPopulated = isPopulated;
+        //  ScreenHandler.isPopulated = isPopulated;
     }
-    
-    private static int accessCounter;    
+
+    private static int accessCounter;
 
     public boolean isIsActive() {
         return isActive;
@@ -61,8 +57,4 @@ public abstract class ScreenHandler implements IScreen  {
         accessCounter = aAccessCounter;
     }
 
-   
-
-  
-    
 }
