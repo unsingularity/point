@@ -1,3 +1,5 @@
+package automat.screens;
+
 
 import java.util.Observable;
 

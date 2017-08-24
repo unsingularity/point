@@ -1,5 +1,4 @@
-
-import java.util.Observable;
+package automat.screens;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,20 +10,15 @@ import java.util.Observable;
  *
  * @author tttt
  */
-public class BillingScreen extends Screen {
-    
+public class FictionalScreenB extends Screen {
+
     @Override
-    public void populate() {
-         
+    protected void populate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void access() {
-        
-    }
-
-    @Override
-    public void update(Observable o, Object arg) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
