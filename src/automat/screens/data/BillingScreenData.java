@@ -10,16 +10,16 @@ package automat.screens.data;
  */
 public class BillingScreenData extends ScreenContents{
 
-    protected static String totalDueValue;
-    protected static String dueDateValue;
-    protected static String isPaidValue;    
+    protected String totalDueValue;
+    protected String dueDateValue;
+    protected String isPaidValue;    
 
     public String getTotalDueValue() {
         return totalDueValue;
     }
 
     public void setTotalDueValue(String totalDueValue) {
-        BillingScreenData.totalDueValue = totalDueValue;
+       // BillingScreenData.totalDueValue = totalDueValue;
     }
 
     public String getDueDateValue() {
@@ -27,7 +27,7 @@ public class BillingScreenData extends ScreenContents{
     }
 
     public void setDueDateValue(String dueDateValue) {
-        BillingScreenData.dueDateValue = dueDateValue;
+      //  BillingScreenData.dueDateValue = dueDateValue;
     }
 
     public String getIsPaidValue() {
@@ -35,7 +35,7 @@ public class BillingScreenData extends ScreenContents{
     }
 
     public void setIsPaidValue(String isPaidValue) {
-        BillingScreenData.isPaidValue = isPaidValue;
+      //  BillingScreenData.isPaidValue = isPaidValue;
     }
 
     @Override
