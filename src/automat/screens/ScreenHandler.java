@@ -2,27 +2,28 @@ package automat.screens;
 
 
 import java.util.ArrayList;
-import java.util.Observable;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author tttt
- */
-public abstract class ScreenHandler {
+public abstract class ScreenHandler implements IScreen  {
     protected static boolean isActive;
     protected static String locator;
     protected static boolean isPopulated;
+    protected static boolean isUpdated;
     protected ArrayList<ScreenHandler> affectedByList;
-    protected Object a;
-    private Object b;  
-  
-   
+    protected ScreenHandler instance;
+
+    public static boolean isIsUpdated() {
+        return isUpdated;
+    }
+
+    public static void setIsUpdated(boolean isUpdated) {
+        ScreenHandler.isUpdated = isUpdated;
+    }
+    
+    protected ScreenHandler(){
+       
+    } 
+    
+    public abstract void populate();
 
     public static boolean isIsPopulated() {
         return isPopulated;
@@ -32,10 +33,7 @@ public abstract class ScreenHandler {
         ScreenHandler.isPopulated = isPopulated;
     }
     
-    protected abstract void populate();
-    private static int accessCounter;
-    
-    public abstract void access ();
+    private static int accessCounter;    
 
     public static boolean isIsActive() {
         return isActive;
@@ -60,10 +58,7 @@ public abstract class ScreenHandler {
     protected static void setAccessCounter(int aAccessCounter) {
         accessCounter = aAccessCounter;
     }
-    
-     public abstract boolean verifyScreen();
-     
-    protected abstract void setStateToDeprecated();
+
    
 
   

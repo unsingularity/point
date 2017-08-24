@@ -1,27 +1,25 @@
 package automat.screens.data;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author tttt
  */
 public class BillingScreenData extends ScreenContents{
 
-    protected String totalDueValue;
-    protected String dueDateValue;
-    protected String isPaidValue;    
+    protected static String totalDueValue;
+    protected static String dueDateValue;
+    protected static String isPaidValue;    
 
     public String getTotalDueValue() {
         return totalDueValue;
     }
 
     public void setTotalDueValue(String totalDueValue) {
-        this.totalDueValue = totalDueValue;
+        BillingScreenData.totalDueValue = totalDueValue;
     }
 
     public String getDueDateValue() {
@@ -29,7 +27,7 @@ public class BillingScreenData extends ScreenContents{
     }
 
     public void setDueDateValue(String dueDateValue) {
-        this.dueDateValue = dueDateValue;
+        BillingScreenData.dueDateValue = dueDateValue;
     }
 
     public String getIsPaidValue() {
@@ -37,7 +35,7 @@ public class BillingScreenData extends ScreenContents{
     }
 
     public void setIsPaidValue(String isPaidValue) {
-        this.isPaidValue = isPaidValue;
+        BillingScreenData.isPaidValue = isPaidValue;
     }
 
     @Override
