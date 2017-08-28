@@ -18,6 +18,8 @@ package automat.screens;
 
 import automat.screens.data.BillingScreenData;
 import automat.screens.data.ScreenContents;
+import automationTool.WPFButton;
+import automationTool.WPFTextBox;
 import java.util.Observable;
 
 /*
@@ -30,7 +32,19 @@ import java.util.Observable;
  * @author tttt
  */
 public class BillingScreen extends ScreenHandler implements IScreen{
-
+    
+    
+    /**HANDLERS FOR ELEMENTS OF THIS SCREEN 
+     */
+    
+    private WPFTextBox clientNameTextBox = new WPFTextBox("//WPFTextBox/[@name='name");
+    private WPFTextBox totalDueTextBox = new WPFTextBox("//WPFTextBox/[@name='total']");
+    private WPFButton totalAmountToPay = new WPFButton("//WPFButton");
+    private WPFButton payBillButton = new WPFButton("//WPFButton");
+    
+    /**SINGLETON
+     * 
+     */
     private static class InstanceHolder {
         private static final BillingScreen SINGLETON = new BillingScreen();
     }
@@ -67,10 +81,6 @@ public class BillingScreen extends ScreenHandler implements IScreen{
     public boolean isUpdated() {
         return false;
 
-    }
-
-    public void xuabps() {
-        int i;
     }
 
 }

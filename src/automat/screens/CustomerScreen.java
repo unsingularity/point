@@ -16,6 +16,8 @@
  */
 package automat.screens;
 
+import automationTool.WPFButton;
+import automationTool.WPFTextBox;
 import java.util.Observable;
 
 /*
@@ -28,6 +30,11 @@ import java.util.Observable;
  * @author tttt
  */
 public class CustomerScreen extends ScreenHandler implements IScreen {
+
+    private WPFTextBox clientNameTextBox = new WPFTextBox("//WPFTextBox/[@name='name");
+    private WPFTextBox totalDueTextBox = new WPFTextBox("//WPFTextBox/[@name='total']");
+    private WPFButton totalAmountToPay = new WPFButton("//WPFButton");
+    private WPFButton payBillButton = new WPFButton("//WPFButton");
 
     private static class InstanceHolder {
 
