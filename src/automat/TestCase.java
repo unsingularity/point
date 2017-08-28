@@ -38,8 +38,8 @@ public class TestCase {
     
     public static void execute() throws Exception{
         
-       //handler
-        CustomerScreen customerScreenHandler = CustomerScreen.getInstance();
+       //handler should never be here, as seem below
+        //CustomerScreen customerScreenHandler = CustomerScreen.getInstance();
         
         //uses the handler to enter and check basic screen info to assure it was displayed as expected
         CustomerScreenActions.enterScreen();        
