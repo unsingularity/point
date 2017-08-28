@@ -27,7 +27,7 @@ public class CustomerScreenActions {
     private final static CustomerScreen screenHandler = CustomerScreen.getInstance();
     private static String actionDescription = "";
 
-    public void enterScreen() {
+    public static void enterScreen() {
         screenHandler.enter();
     }
 
@@ -45,6 +45,10 @@ public class CustomerScreenActions {
         }catch(Exception e){
             throw new TestActionException(e.getMessage(), actionDescription);                        
         }
+    }
+
+    public static void verifyScreen() {
+        
     }
 
 }

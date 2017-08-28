@@ -21,17 +21,16 @@ package automat.screens.actions;
  * @author tttt
  */
 public class TestActionException extends Exception {
-    
+
     protected String failedActionDescription;
-    
-    public TestActionException(String msg){
+
+    public TestActionException(String msg) {
         super(msg);
     }
-    
-    public TestActionException(String msg, String failedActionDescription){
-       super(msg);
-       this.failedActionDescription = "Failed to perform: " + failedActionDescription;         
+
+    public TestActionException(String msg, String failedActionDescription) {
+        super(msg);
+        this.failedActionDescription = "Failed to perform: " + failedActionDescription;
     }
 
-    
 }

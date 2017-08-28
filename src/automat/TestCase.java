@@ -21,6 +21,7 @@ import automat.screens.BillingScreen;
 import automat.*;
 import automat.screens.CustomerScreen;
 import automat.screens.actions.*;
+import automat.screens.data.CustomerScreenData;
 
 
 /*
@@ -41,11 +42,15 @@ public class TestCase {
         CustomerScreen customerScreenHandler = CustomerScreen.getInstance();
         
         //uses the handler to enter and check basic screen info to assure it was displayed as expected
-        customerScreenHandler.enter();
-        customerScreenHandler.verifyScreen();
+        CustomerScreenActions.enterScreen();        
+        CustomerScreenActions.verifyScreen();
         
         //change customer due date;
-        CustomerScreenActions.changeDueDate("05-05-2147");    
+        CustomerScreenActions.changeDueDate("05-05-2147");  
+        
+        //w
+        System.out.println(CustomerScreenData.getInstance().getAddressValue());
+        System.out.println(CustomerScreenData.getInstance().getAddressValue());
         
     }
     

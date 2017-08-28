@@ -1,0 +1,76 @@
+@startuml
+abstract class automat.screens.ScreenHandler
+abstract class automat.screens.data.ScreenContents
+annotation java.lang.Override
+class automat.EntryPoint
+class automat.TestCase
+class automat.screens.BillingScreen
+class automat.screens.CustomerScreen
+class automat.screens.FictionalScreenA
+class automat.screens.FictionalScreenB
+class automat.screens.FictionalScreenC
+class automat.screens.actions.BillingScreenActions
+class automat.screens.actions.CustomerScreenActions
+class automat.screens.actions.TestActionException
+class automat.screens.data.BillingScreenData
+class automat.screens.data.CustomerScreenData
+class automat.screens.data.FictionScreenAData
+class automat.screens.data.FictionScreenBData
+class automat.screens.data.FictionScreenCData
+class automationTool.Desktop
+class automationTool.MemoryAddressHook
+class automationTool.MemoryElementFinder
+class automationTool.WPFButton
+class automationTool.WPFElement
+class automationTool.WPFTextBox
+class java.lang.Exception
+class java.util.ArrayList
+class java.util.List
+class java.util.Observable
+interface automat.screens.IScreen
+interface java.util.Observer
+automat.screens.ScreenHandler ..> java.lang.Override
+automat.screens.ScreenHandler ..> java.util.ArrayList
+automat.screens.ScreenHandler --|> java.util.Observable
+automat.screens.ScreenHandler --|> automat.screens.IScreen
+automat.TestCase ..> automat.screens.BillingScreen
+automat.TestCase ..> automat.screens.CustomerScreen
+automat.screens.BillingScreen --|> automat.screens.ScreenHandler
+automat.screens.BillingScreen ..> automat.screens.data.ScreenContents
+automat.screens.BillingScreen ..> java.lang.Override
+automat.screens.BillingScreen ..> automat.screens.data.BillingScreenData
+automat.screens.BillingScreen ..> automationTool.WPFButton
+automat.screens.BillingScreen ..> automationTool.WPFTextBox
+automat.screens.BillingScreen ..> java.util.Observable
+automat.screens.BillingScreen --|> automat.screens.IScreen
+automat.screens.CustomerScreen --|> automat.screens.ScreenHandler
+automat.screens.CustomerScreen ..> automat.screens.data.ScreenContents
+automat.screens.CustomerScreen ..> java.lang.Override
+automat.screens.CustomerScreen ..> automat.screens.data.CustomerScreenData
+automat.screens.CustomerScreen ..> automationTool.WPFButton
+automat.screens.CustomerScreen ..> automationTool.WPFTextBox
+automat.screens.CustomerScreen ..> java.util.ArrayList
+automat.screens.CustomerScreen ..> java.util.List
+automat.screens.CustomerScreen ..> java.util.Observable
+automat.screens.CustomerScreen --|> automat.screens.IScreen
+automat.screens.FictionalScreenA --|> automat.screens.ScreenHandler
+automat.screens.FictionalScreenA ..> java.lang.Override
+automat.screens.FictionalScreenA --|> automat.screens.IScreen
+automat.screens.FictionalScreenB --|> automat.screens.ScreenHandler
+automat.screens.FictionalScreenB ..> java.lang.Override
+automat.screens.FictionalScreenB --|> automat.screens.IScreen
+automat.screens.FictionalScreenC --|> automat.screens.ScreenHandler
+automat.screens.FictionalScreenC ..> java.lang.Override
+automat.screens.FictionalScreenC --|> automat.screens.IScreen
+automat.screens.actions.CustomerScreenActions ..> automat.screens.CustomerScreen
+automat.screens.actions.TestActionException --|> java.lang.Exception
+automat.screens.data.BillingScreenData --|> automat.screens.data.ScreenContents
+automat.screens.data.CustomerScreenData --|> automat.screens.data.ScreenContents
+automat.screens.data.FictionScreenAData --|> automat.screens.data.ScreenContents
+automat.screens.data.FictionScreenBData --|> automat.screens.data.ScreenContents
+automat.screens.data.FictionScreenCData --|> automat.screens.data.ScreenContents
+automationTool.MemoryAddressHook ..> java.util.List
+automationTool.WPFButton --|> automationTool.WPFElement
+automationTool.WPFTextBox --|> automationTool.WPFElement
+automat.screens.IScreen --|> java.util.Observer
+@enduml
