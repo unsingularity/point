@@ -24,18 +24,18 @@ import automat.screens.CustomerScreen;
  */
 public class CustomerScreenActions {
 
-    private final CustomerScreen screenHandler = CustomerScreen.getInstance();
-    private String actionDescription = "";
+    private final static CustomerScreen screenHandler = CustomerScreen.getInstance();
+    private static String actionDescription = "";
 
     public void enterScreen() {
         screenHandler.enter();
     }
 
-    public void closeScreen() {
+    public static void closeScreen() {
         screenHandler.exit();
     }
 
-    public void changeDueDate(String dueToBeSet) throws TestActionException {
+    public static void changeDueDate(String dueToBeSet) throws TestActionException {
         try {
             actionDescription = "Change next due date value and click Ok";
             screenHandler.setdateOfNextDueTextBox("NEVER WANT TO PAY THIS");

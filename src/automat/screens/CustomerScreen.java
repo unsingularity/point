@@ -71,7 +71,7 @@ public class CustomerScreen extends ScreenHandler implements IScreen {
      */
     public void clickOnSetdateOfNextDueButton() {
         setdateOfNextDueButton.click();
-
+        notifyAffectedScreens();
     }
 
     public void setdateOfNextDueTextBox(String newText) {
@@ -83,6 +83,7 @@ public class CustomerScreen extends ScreenHandler implements IScreen {
         customerAddressTextBox.setText(newText);
         notifyAffectedScreens();
     }
+    
 
     @Override
     public boolean isUpdated() {
@@ -114,7 +115,7 @@ public class CustomerScreen extends ScreenHandler implements IScreen {
     //public void setValueOfdateOfNextDueTextBox()
     @Override
     public boolean verifyScreen() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return customerIdTextBox.getText().equals("someId");
     }
 
     protected static void setStateToDeprecated() {

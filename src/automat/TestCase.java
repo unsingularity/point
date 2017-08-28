@@ -14,7 +14,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 package automat;
+
+import automat.screens.BillingScreen;
+import automat.*;
+import automat.screens.CustomerScreen;
+import automat.screens.actions.*;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -27,5 +34,19 @@ package automat;
  * @author tttt
  */
 public class TestCase {
+    
+    public static void execute() throws Exception{
+        
+       //handler
+        CustomerScreen customerScreenHandler = CustomerScreen.getInstance();
+        
+        //uses the handler to enter and check basic screen info to assure it was displayed as expected
+        customerScreenHandler.enter();
+        customerScreenHandler.verifyScreen();
+        
+        //change customer due date;
+        CustomerScreenActions.changeDueDate("05-05-2147");    
+        
+    }
     
 }
