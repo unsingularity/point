@@ -54,14 +54,4 @@ public class BillingScreenData extends ScreenContents{
       //  BillingScreenData.isPaidValue = isPaidValue;
     }
 
-    @Override
-    protected boolean isDataDeprecated() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    protected void deprecateData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }

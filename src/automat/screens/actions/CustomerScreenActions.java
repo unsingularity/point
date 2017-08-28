@@ -16,16 +16,35 @@
  */
 package automat.screens.actions;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import automat.screens.CustomerScreen;
 
 /**
  *
  * @author tttt
  */
 public class CustomerScreenActions {
-    
+
+    private final CustomerScreen screenHandler = CustomerScreen.getInstance();
+    private String actionDescription = "";
+
+    public void enterScreen() {
+        screenHandler.enter();
+    }
+
+    public void closeScreen() {
+        screenHandler.exit();
+    }
+
+    public void changeDueDate(String dueToBeSet) throws TestActionException {
+        try {
+            actionDescription = "Change next due date value and click Ok";
+            screenHandler.setdateOfNextDueTextBox("NEVER WANT TO PAY THIS");
+            screenHandler.clickOnSetdateOfNextDueButton();
+            screenHandler.verifyScreen();
+
+        }catch(Exception e){
+            throw new TestActionException(e.getMessage(), actionDescription);                        
+        }
+    }
+
 }

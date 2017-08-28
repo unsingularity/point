@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 tttt
  *
  * This program is free software: you can redistribute it and/or modify
@@ -14,19 +14,24 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package automat.screens;
-
-import java.util.Observer;
+package automat.screens.actions;
 
 /**
  *
  * @author tttt
  */
-public interface IScreen extends Observer{
-      
-    void enter();
-    void exit();;    
-    boolean verifyScreen();  
-    boolean isUpdated();
-   
+public class TestActionException extends Exception {
+    
+    protected String failedActionDescription;
+    
+    public TestActionException(String msg){
+        super(msg);
+    }
+    
+    public TestActionException(String msg, String failedActionDescription){
+       super(msg);
+       this.failedActionDescription = "Failed to perform: " + failedActionDescription;         
+    }
+
+    
 }

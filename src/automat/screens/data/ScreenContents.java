@@ -21,12 +21,17 @@ package automat.screens.data;
  * @author tttt
  */
 public abstract class ScreenContents {
+
+    protected boolean isDataDeprecated = true;
+
+    //  abstract boolean checkIfDataIsValid();
+    void setDataToDeprecated() {
+        isDataDeprecated = true;
+    }
+
+    void notifyThatDataIsValid() {
+        isDataDeprecated = false;
+    }    
     
-    boolean isDeprecated;
-    
-    protected abstract boolean isDataDeprecated();
-    
-    protected abstract void deprecateData();   
-    
-    
+
 }

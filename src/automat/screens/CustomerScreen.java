@@ -16,8 +16,12 @@
  */
 package automat.screens;
 
+import automat.screens.data.CustomerScreenData;
+import automat.screens.data.ScreenContents;
 import automationTool.WPFButton;
 import automationTool.WPFTextBox;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 
 /*
@@ -30,21 +34,84 @@ import java.util.Observable;
  * @author tttt
  */
 public class CustomerScreen extends ScreenHandler implements IScreen {
+    
+    /*
+    *screen data object - ought to be handled by this class only
+    */
+    private CustomerScreenData customerScreenData;
+    
+    /*
+    screen dependency mapping
+     */
+    ArrayList<ScreenHandler> listOfScreensThatAffectsThisHandler = new ArrayList<ScreenHandler>() {
+        {
+            add(BillingScreen.getInstance());
+        }
+    };
+    /*
+    *screens affected by handles on this screen
+     */
+ /*
+    screen elements representation
+     */
+    private final WPFTextBox customerIdTextBox = new WPFTextBox("//WPFTextBox/[@name='name");
+    private final WPFTextBox customerNameTextBox = new WPFTextBox("//WPFTextBox/[@name='total']");
+    private final WPFTextBox customerStatusTextBox = new WPFTextBox("//WPFTextBox/[@name='total']");
+    private final WPFTextBox customerAddressTextBox = new WPFTextBox("//WPFTextBox/[@name='total']");
 
-    private WPFTextBox clientNameTextBox = new WPFTextBox("//WPFTextBox/[@name='name");
-    private WPFTextBox totalDueTextBox = new WPFTextBox("//WPFTextBox/[@name='total']");
-    private WPFButton totalAmountToPay = new WPFButton("//WPFButton");
-    private WPFButton payBillButton = new WPFButton("//WPFButton");
+    private final WPFButton openBillingScreenButton = new WPFButton("//WPFButton");
+    private final WPFButton exitButton = new WPFButton("//WPFButton");
 
+    private final WPFTextBox dateOfNextDueTextBox = new WPFTextBox("//WPFTextBox");
+    private final WPFButton setdateOfNextDueButton = new WPFButton("//WPFButton");
+
+    /*
+    screen secure controllers   
+    *
+     */
+    public void clickOnSetdateOfNextDueButton() {
+        setdateOfNextDueButton.click();
+
+    }
+
+    public void setdateOfNextDueTextBox(String newText) {
+        dateOfNextDueTextBox.setText(newText);
+        notifyAffectedScreens();
+    }
+
+    public void setCustomerAddressTextBoxTo(String newText) {
+        customerAddressTextBox.setText(newText);
+        notifyAffectedScreens();
+    }
+
+    @Override
+    public boolean isUpdated() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /*
+    screen singleton
+     */
     private static class InstanceHolder {
 
         private static final CustomerScreen SINGLETON = new CustomerScreen();
     }
-
+    
+    /*
+    * low performance
+    */
     public static CustomerScreen getInstance() {
+        listOfScreensAffectedByThisHandler = new ArrayList<ScreenHandler>() {
+            {
+                add(BillingScreen.getInstance().register(InstanceHolder.SINGLETON));
+                add(FictionalScreenA.getInstance().register(InstanceHolder.SINGLETON));
+                add(FictionalScreenC.getInstance().register(InstanceHolder.SINGLETON));
+            }
+        };
         return InstanceHolder.SINGLETON;
     }
 
+    //public void setValueOfdateOfNextDueTextBox()
     @Override
     public boolean verifyScreen() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -54,24 +121,25 @@ public class CustomerScreen extends ScreenHandler implements IScreen {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+  
     public void enter() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       //do stuff to enter screen
+       populate();
     }
 
     @Override
     public void exit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void populate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        customerScreenData = CustomerScreenData.getUnsecureInstance();
+        customerScreenData.setAddressValue(customerAddressTextBox.getText());
+        customerScreenData.setNameValue(customerNameTextBox.getText());
+        customerScreenData.setToValid();
     }
 
-    @Override
-    public boolean isUpdated() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
 }

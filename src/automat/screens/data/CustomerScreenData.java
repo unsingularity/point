@@ -21,16 +21,47 @@ package automat.screens.data;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author tttt
  */
-public class CustomerScreenData extends ScreenContents{
+public class CustomerScreenData extends ScreenContents {
 
+    // protected boolean dataValidity = false; 
+    protected String customerId;
+    protected String customerStatus;
+    protected String dateOfNextDue;
     protected String addressValue;
     protected String nameValue;
-    protected String zipCodeValue;    
+    protected String zipCodeValue;
+    protected static boolean isDataValid = false;
+
+    private static class InstanceHolder {
+
+        private static final CustomerScreenData SINGLETON = new CustomerScreenData();
+    }
+
+    /*
+    * low performance
+     */
+    public static CustomerScreenData getInstance() throws Exception {
+        if (isDataValid) {
+            return InstanceHolder.SINGLETON;
+        } else {
+            throw new Exception("Cannot assure data is valid");
+        }
+    }
+
+    /*
+    data validity not assured on this getter
+    */
+    public static CustomerScreenData getUnsecureInstance()  {
+        return InstanceHolder.SINGLETON;
+    }
+    
+    public void setToValid(){
+        this.isDataValid = true;
+    }
 
     public String getAddressValue() {
         return addressValue;
@@ -54,16 +85,6 @@ public class CustomerScreenData extends ScreenContents{
 
     public void setZipCodeValue(String zipCodeValue) {
         this.zipCodeValue = zipCodeValue;
-    }
-
-    @Override
-    protected boolean isDataDeprecated() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    protected void deprecateData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

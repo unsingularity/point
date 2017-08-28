@@ -17,27 +17,42 @@
 package automat.screens;
 
 import java.util.ArrayList;
+import java.util.Observable;
 
-public abstract class ScreenHandler implements IScreen {
-
+public abstract class ScreenHandler extends Observable implements IScreen {
+    
     protected boolean isActive;
     protected String locator;
     protected boolean isPopulated;
-    protected boolean isUpdated;
-    protected ArrayList<ScreenHandler> affectedByList;        
-    
+    protected boolean isDataValid = false;
+    protected static ArrayList<ScreenHandler> listOfScreensThatAffectsThisHandler = new ArrayList<>();  
+    protected static ArrayList<ScreenHandler> listOfScreensAffectedByThisHandler = new ArrayList<>();
+
     public abstract void populate();
 
-    public boolean isIsUpdated() {
-        
-        return isUpdated;
+    public ScreenHandler register(ScreenHandler screenAffected) {
+        listOfScreensAffectedByThisHandler.add(screenAffected);
+        return this;
     }
 
     public void setIsUpdated(boolean isUpdated) {
         // ScreenHandler.isUpdated = isUpdated;
     }
 
-   
+    protected void notifyAffectedScreens() {
+        for (ScreenHandler screen : listOfScreensAffectedByThisHandler) {
+            screen.update();
+        }
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void update() {
+        isDataValid = false;
+    }
 
     public boolean isIsPopulated() {
         return isPopulated;

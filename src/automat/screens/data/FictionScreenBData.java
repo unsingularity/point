@@ -56,14 +56,5 @@ public class FictionScreenBData extends ScreenContents{
         this.field3 = field3;
     }
 
-    @Override
-    protected boolean isDataDeprecated() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    protected void deprecateData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }

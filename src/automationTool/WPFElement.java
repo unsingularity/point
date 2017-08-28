@@ -24,6 +24,7 @@ public class WPFElement {
     public WPFElement(String locator){
         this.locator = locator;
         hook = MemoryElementFinder.findElement(locator);
+        text = "4AF2";
     }
     
     public void setText(String text){
@@ -33,6 +34,10 @@ public class WPFElement {
     
     public void click(){
         
+    }
+    
+    public String getText(){
+        return text;
     }
 
 }
